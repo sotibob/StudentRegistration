@@ -1,0 +1,20 @@
+<div class="forms bg-light">
+    <h1>Login</h1>
+    <p [innerHTML]="error" style="color: red;"></p>
+    <form class="row" [formGroup]="loginForm" (ngSubmit)="validate()">
+        <div class="col-md-12 item">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email"  id="inputEmail4" required>
+            <span *ngIf="email?.invalid && email?.touched" style="color: red;">Email is required!</span>
+        </div>
+        <div class="col-md-12 item">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password"  class="form-control" formControlName="password" id="inputPassword4" required>
+            <span *ngIf="password?.invalid && password?.touched" style="color: red;">Password is required!</span>
+        </div>
+        <div class="col-12 item">
+            <button type="submit" class="btn btn-success">Login</button>
+        </div>
+    </form>
+</div>
+s

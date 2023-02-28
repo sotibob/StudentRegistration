@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="navbar-nav">
+    <div class="nav-item">
+      <button [innerHTML]="button1" type="button" (click)="firstBtn()" class="btn btn-outline-success"></button>
+    </div>
+    <div class="nav-item">
+      <button [innerHTML]="button2" type="button" (click)="secondBtn()" class="btn btn-outline-success"></button>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

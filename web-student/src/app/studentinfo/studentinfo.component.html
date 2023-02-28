@@ -1,0 +1,28 @@
+<div class="forms bg-light">
+    <h1>Student Information</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="myName" class="form-label">Name:</label>
+            <label class="form-label" id="myName"></label>
+        </div>
+        <div class="col-md-12">
+            <label for="myEmail" class="form-label">Email:</label>
+            <label class="form-label" id="myEmail"></label>
+        </div>
+        <div class="col-md-12">
+            <label for="myDOB" class="form-label">Date of Birth:</label>
+            <label class="form-label" id="myDOB"></label>
+        </div>
+        <div class="col-md-12">
+            <label for="myAddress" class="form-label">Address:</label>
+            <label class="form-label" id="myAddress"></label>
+        </div>
+        <div class="col-md-12">
+            <details>
+                <summary>Classes</summary>
+                <div class="myClasses">No classes</div>
+                <button type="button" (click)="regClass()" class="btn btn-link">Add Classes</button>
+            </details>
+        </div>
+    </div>
+</div>

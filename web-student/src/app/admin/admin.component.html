@@ -1,0 +1,19 @@
+<div class="forms bg-light">
+    <h1>Admin</h1>
+    <p [innerHTML]="error" style="color: red;"></p>
+    <form class="row" [formGroup]="adminLoginForm" (ngSubmit)="validateAdmin()">
+        <div class="col-md-12 item">
+            <label for="inputId4" class="form-label">Id</label>
+            <input type="text"  class="form-control" formControlName="id" id="inputId4" required>
+            <span *ngIf="id?.invalid && id?.touched" style="color: red;">Id is required!</span>
+        </div>
+        <div class="col-md-12 item">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password"  class="form-control" formControlName="password" id="inputPassword4" required>
+            <span *ngIf="password?.invalid && password?.touched" style="color: red;">Password is required!</span>
+        </div>
+        <div class="col-12 item">
+            <button type="submit"  (click)="validateAdmin()" class="btn btn-success">Login</button>
+        </div>
+    </form>
+</div>
