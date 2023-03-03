@@ -1,4 +1,28 @@
-<div class="col-12 item">
-    <span>Click here to Logout</span>
-    <button type="button" [routerLink]="['/admin']" class="btn btn-link">Logout</button>
+<div class="big">
+    <div class="col-md-6 boxes bg-light">
+        <div *ngFor="let item of classes">
+            Class Id: {{item.classId}<br>
+            Class Name: {{item.className}}<br>
+            Date Time: {{item.dateTime}}<br>
+            Location: {{item.classLocation}}<br>
+            Credit Hours: {{item.creditHours}}<br>
+            Professor: {{item.classProfessor}}<br>
+            <br>
+        </div>
+    </div>
+    <div class="col-md-6 boxes bg-light">
+        <div>
+            <input (click)="crud($event)" type="radio" name="crud" id="add">
+            <label for="add">Add</label>
+            <input (click)="crud($event)" type="radio" name="crud" id="edit">
+            <label for="edit">Edit</label>
+            <input (click)="crud($event)" type="radio" name="crud" id="delete">
+            <label for="delete">Delete</label>
+        </div>
+        <div [innerHTML]="info"></div>
+    </div>
+    <div class="col-12 item">
+        <span>Click here to Logout</span>
+        <button type="button" [routerLink]="['/admin']" class="btn btn-link">Logout</button>
+    </div>
 </div>

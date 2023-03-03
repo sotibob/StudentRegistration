@@ -11,7 +11,7 @@ export interface Student {
     city: any,
     state: any,
     zip: any,
-    classIds: any;
+    classIds: number[];
 }
 
 export interface StudentWithClasses {

@@ -17,7 +17,7 @@ export class StudentinfoComponent implements OnInit{
 
   val1: any
   val2: any
-  student = {}
+  student = {} as Student
   classes = [] as Class[]
 
   public ngOnInit(): void {
@@ -26,12 +26,16 @@ export class StudentinfoComponent implements OnInit{
     this.serviceLogin.data$.subscribe(res => this.val2 = res);
     this.serviceRegister.data$.subscribe(res => this.val1 = res);
     if(this.val1 != null) {
-      this.config.getStudent(this.val1)
-      this.config.getClasses()
+      this.config.getStudent(this.val1).subscribe(data => {
+        this.student = data.student;
+        this.classes = data.courses;
+      })
     }
     else {
-      this.config.getStudent(this.val2)
-      this.config.getClasses()
+      this.config.getStudent(this.val2).subscribe(data => {
+        this.student = data.student;
+        this.classes = data.courses;
+      })
     }
   }
 

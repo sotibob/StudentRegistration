@@ -3,24 +3,35 @@
     <div class="row">
         <div class="col-md-12">
             <label for="myName" class="form-label">Name:</label>
-            <label class="form-label" id="myName"></label>
+            <label class="form-label" id="myName">{{student.firstName}} {{student.lastName}}</label>
         </div>
         <div class="col-md-12">
             <label for="myEmail" class="form-label">Email:</label>
-            <label class="form-label" id="myEmail"></label>
+            <label class="form-label" id="myEmail">{{student.email}}</label>
         </div>
         <div class="col-md-12">
             <label for="myDOB" class="form-label">Date of Birth:</label>
-            <label class="form-label" id="myDOB"></label>
+            <label class="form-label" id="myDOB">{{student.studentDOB}}</label>
         </div>
         <div class="col-md-12">
             <label for="myAddress" class="form-label">Address:</label>
-            <label class="form-label" id="myAddress"></label>
+            <label class="form-label" id="myAddress">{{student.street}}, {{student.city}}, {{student.state}}. {{student.zip}}.</label>
         </div>
         <div class="col-md-12">
             <details>
                 <summary>Classes</summary>
-                <div class="myClasses">No classes</div>
+                <div class="myClasses">
+                    <span *ngIf="classes.length == 0">No Classes</span>
+                    <div *ngFor="let item of classes">
+                        className: {{item.className}}<br>
+                        Date/Time: {{item.dateTime}}<br>
+                        Location: {{item.classLocation}}<br>
+                        Credit Hours: {{item.creditHours}}<br>
+                        Professor: {{item.classProfessor}}<br>
+                        <br>
+                        <hr>
+                    </div>
+                </div>
                 <button type="button" (click)="regClass()" class="btn btn-link">Add Classes</button>
             </details>
         </div>

@@ -16,7 +16,7 @@ export class ConfigService {
   }
 
   public getStudents() {
-    return this.http.get<StudentWithClasses>(this.studentUrl);
+    return this.http.get<StudentWithClasses[]>(this.studentUrl);
   }
 
   public addStudent(stu: Student) {
@@ -33,7 +33,7 @@ export class ConfigService {
   }
 
   public getClasses() {
-    return this.http.get(this.classUrl);
+    return this.http.get<Class[]>(this.classUrl);
   }
 
   public getClass(id: any) {
