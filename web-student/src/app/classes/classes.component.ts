@@ -28,16 +28,23 @@ export class ClassesComponent implements OnInit{
     classLocation: new FormControl(''),
   });
 
-  addClass() {
+  get classId() {
+    return this.crudForm.get("classId");
+  }
 
+  addClass() {
+    this.config.addClass(this.crudForm as unknown as Class);
+    this.ngOnInit();
   }
 
   editClass(){
-
+    this.config.editClass(this.crudForm as unknown as Class, this.classId);
+    this.ngOnInit();
   }
 
   deleteClass() {
-
+    this.config.deleteClass(this.classId)
+    this.ngOnInit();
   }
 
   crud(event: any) {

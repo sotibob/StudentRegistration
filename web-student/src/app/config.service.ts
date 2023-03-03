@@ -24,11 +24,11 @@ export class ConfigService {
     return this.http.post<Student>(this.studentUrl + "add", stu).pipe();
   }
 
-  public editStudent(stu: Student, id: string) {
+  public editStudent(stu: Student, id: any) {
     return this.http.put<Student>(this.studentUrl + "update/" + id, stu).pipe;
   }
 
-  public deleteStudent(id: string) {
+  public deleteStudent(id: any) {
     this.http.delete(this.studentUrl + "delete/" + id);
   }
 

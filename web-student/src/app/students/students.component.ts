@@ -40,16 +40,23 @@ export class StudentsComponent implements OnInit{
     zip: new FormControl(''),
   });
 
-  addStudent() {
+  get studentId() {
+    return this.crudForm.get("studentId");
+  }
 
+  addStudent() {
+    this.config.addStudent(this.crudForm as unknown as Student);
+    this.ngOnInit();
   }
 
   editStudent(){
-
+    this.config.editStudent(this.crudForm as unknown as Student, this.studentId);
+    this.ngOnInit();
   }
 
   deleteStudent() {
-
+    this.config.deleteStudent(this.studentId);
+    this.ngOnInit();
   }
 
   crud(event: any) {
